@@ -16,7 +16,7 @@ namespace API.Service
         private readonly Dictionary<string, string> _parameters;
         public HtmlNodeCollection AllNodes;
 
-        public WebCrawler(string baseUrl, string path, Dictionary<string, string> parameters)
+        public WebCrawler(string baseUrl, Dictionary<string, string> parameters, string path = "")
         {
             _baseUrl = baseUrl;
             _path = path;

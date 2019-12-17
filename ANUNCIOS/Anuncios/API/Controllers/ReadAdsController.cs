@@ -25,7 +25,13 @@ namespace API.Controllers
                 return Unauthorized();
 
             var urlParameters = new Dictionary<string, string> {{"q", parameters.ProductName}};
-            var webCrawler = new WebCrawler($"https://{parameters.SearchRegion.UfState}.olx.com.br", $"regiao-de-{parameters.SearchRegion.City}", urlParameters);
+
+            var baseUrl = string.IsNullOrEmpty(parameters.SearchRegion)
+                ? "https://olx.com.br/brasil"
+                : $"https://{parameters.SearchRegion}.olx.com.br";
+                
+            
+            var webCrawler = new WebCrawler(baseUrl, urlParameters);
             
             var ads = webCrawler.Read();
 

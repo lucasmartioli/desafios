@@ -8,6 +8,6 @@ namespace API.Model
         public string ProductName;
      
         [JsonProperty]
-        public Region SearchRegion;
+        public string SearchRegion;
     }
 }
