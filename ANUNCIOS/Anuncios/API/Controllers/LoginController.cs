@@ -23,7 +23,7 @@ namespace API.Controllers
             var hash = System.Text.Encoding.ASCII.GetString(data);
 
             var foundUser = _userService.GetByLogin(user.Login);
-            if (foundUser.Password != hash) return Forbid();
+            if (foundUser == null || foundUser.Password != hash) return Unauthorized();
             
             SingIn();
             

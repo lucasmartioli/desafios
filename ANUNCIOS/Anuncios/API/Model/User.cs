@@ -6,7 +6,7 @@ namespace API.Model
 {
     public class User
     {
-        [BsonId, BsonRepresentation(BsonType.ObjectId)]
+        [BsonId, BsonRepresentation(BsonType.ObjectId), JsonIgnore]
         public string Id;
         
         [BsonElement("Login"), JsonProperty]

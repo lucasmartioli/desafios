@@ -72,7 +72,7 @@ namespace API.Service
                     .Select(item => new Ad()
                     {
                         Name = ExtractProductName(item),
-                        ImageLink = ExtractImageLink(item),
+                        Link = ExtractLink(item),
                         Value = ExtractValue(item)
                     }));
             }
@@ -83,9 +83,9 @@ namespace API.Service
             return item.SelectSingleNode(".//h2[@class='OLXad-list-title']")?.InnerText.Trim().Normalize();
         }
 
-        private static string ExtractImageLink(HtmlNode item)
+        private static string ExtractLink(HtmlNode item)
         {
-            return item.SelectSingleNode(".//img")?.Attributes.First(i => i.Name == "src")?.Value;
+            return item.SelectSingleNode(".//a")?.Attributes.First(i => i.Name == "href")?.Value.Trim();
         }
 
         private static decimal? ExtractValue(HtmlNode item)

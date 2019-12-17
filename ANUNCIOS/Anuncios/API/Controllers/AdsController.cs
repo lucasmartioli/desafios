@@ -20,7 +20,7 @@ namespace API.Controllers
         public ActionResult<IEnumerable<Ad>> Get()
         {
             if (!IsLogged())
-                return Forbid();
+                return Unauthorized();
             
             return _adService.Get();
         }

@@ -6,16 +6,17 @@ namespace API.Model
 {
     public class Ad
     {
-        [BsonId, BsonRepresentation(BsonType.ObjectId)]
+        [BsonId, BsonRepresentation(BsonType.ObjectId), JsonIgnore]
         public string Id;
 
         [BsonElement("Name"), JsonProperty] 
         public string Name;
 
-        [BsonElement("ImageLink"), JsonProperty]
-        public string ImageLink;
-
         [BsonElement("Value"), JsonProperty] 
         public decimal? Value;
+        
+        [BsonElement("Link"), JsonProperty]
+        public string Link;
+
     }
 }

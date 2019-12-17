@@ -21,7 +21,7 @@ namespace API.Controllers
         {
             var data = System.Text.Encoding.ASCII.GetBytes(user.Password);
             data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
-            var hash = System.Text.Encoding.ASCII.GetString(data); //store in db
+            var hash = System.Text.Encoding.ASCII.GetString(data); 
             user.Password = hash;
 
             _userService.Create(user);

@@ -22,7 +22,7 @@ namespace API.Controllers
         public ActionResult ReadAds(Parameters parameters)
         {
             if (!IsLogged())
-                return Forbid();
+                return Unauthorized();
 
             var urlParameters = new Dictionary<string, string> {{"q", parameters.ProductName}};
             var webCrawler = new WebCrawler($"https://{parameters.SearchRegion.UfState}.olx.com.br", $"regiao-de-{parameters.SearchRegion.City}", urlParameters);
