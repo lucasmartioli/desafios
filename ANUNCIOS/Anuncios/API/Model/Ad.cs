@@ -16,6 +16,6 @@ namespace API.Model
         public string ImageLink;
 
         [BsonElement("Value"), JsonProperty] 
-        public double Value;
+        public decimal? Value;
     }
 }

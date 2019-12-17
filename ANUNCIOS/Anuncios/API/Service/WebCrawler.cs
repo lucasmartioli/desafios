@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 using System.Web;
 using API.Model;
 using HtmlAgilityPack;
@@ -64,17 +66,34 @@ namespace API.Service
         {
             foreach (var htmlNode in htmlDoc.DocumentNode.SelectNodes("//ul[@id='main-ad-list']"))
             {
+                
+                
                 ads.AddRange(htmlNode.SelectNodes(".//li[@class='item']")
                     .Select(item => new Ad()
                     {
-                        Name = item.SelectSingleNode(".//h2[@class='OLXad-list-title']")?.InnerText.Trim().Normalize(),
-                        ImageLink = item.SelectSingleNode(".//img")?.Attributes.First(i => i.Name == "src")?.Value,
-                        Value = double.Parse(item.SelectSingleNode(".//p[@class='OLXad-list-price']")
-                                                 ?.InnerText.Replace("R$", "")
-                                                 .Replace(".", "")
-                                                 .Trim() ?? "0")
+                        Name = ExtractProductName(item),
+                        ImageLink = ExtractImageLink(item),
+                        Value = ExtractValue(item)
                     }));
             }
+        }
+
+        private static string ExtractProductName(HtmlNode item)
+        {
+            return item.SelectSingleNode(".//h2[@class='OLXad-list-title']")?.InnerText.Trim().Normalize();
+        }
+
+        private static string ExtractImageLink(HtmlNode item)
+        {
+            return item.SelectSingleNode(".//img")?.Attributes.First(i => i.Name == "src")?.Value;
+        }
+
+        private static decimal? ExtractValue(HtmlNode item)
+        {
+            var valueRegex = Regex.Match(item.SelectSingleNode(".//p[@class='OLXad-list-price']")
+                                             ?.InnerText.Trim() ?? "", @"\d+.\d+");
+
+            return valueRegex.Success ? Convert.ToDecimal(valueRegex.Value) : (decimal?) null;
         }
     }
 }
