@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using API.Model;
+using API.Model.Database;
 using MongoDB.Driver;
 
 namespace API.Service

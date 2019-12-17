@@ -1,4 +1,4 @@
-namespace API.Model
+namespace API.Model.Database
 {
     public class AdDatabaseSettings : IAdDatabaseSettings
     {
