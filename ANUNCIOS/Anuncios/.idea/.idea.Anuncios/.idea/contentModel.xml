@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\lucas.martioli\.Rider2019.3\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\lucas.martioli\.Rider2019.3\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\lucas.martioli\.Rider2019.3\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\lucas.martioli\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\lucas.martioli\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Anuncios.-1670942316.00" t="ExcludeRecursive" />
+    <e p="C:\Users\lucas.martioli\n\desafios\ANUNCIOS\ANUNCIOS" t="IncludeFlat">
+      <e p="Anuncios.sln" t="IncludeFlat" />
+      <e p="API" t="IncludeRecursive">
+        <e p="API.csproj" t="IncludeRecursive" />
+        <e p="app.config" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="AdsController.cs" t="Include" />
+          <e p="BaseController.cs" t="Include" />
+          <e p="LoginController.cs" t="Include" />
+          <e p="ReadAdsController.cs" t="Include" />
+          <e p="UsersController.cs" t="Include" />
+        </e>
+        <e p="Model" t="Include">
+          <e p="Ad.cs" t="Include" />
+          <e p="Database" t="Include">
+            <e p="AdDatabaseSettings.cs" t="Include" />
+          </e>
+          <e p="Parameters.cs" t="Include" />
+          <e p="Region.cs" t="Include" />
+          <e p="User.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="API.AssemblyInfo.cs" t="Include" />
+              <e p="API.RazorAssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Service" t="Include">
+          <e p="AdService.cs" t="Include" />
+          <e p="UserService.cs" t="Include" />
+          <e p="WebCrawler.cs" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
