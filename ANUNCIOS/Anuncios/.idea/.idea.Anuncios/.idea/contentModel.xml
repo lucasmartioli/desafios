@@ -9,6 +9,7 @@
     <e p="C:\Users\lucas.martioli\n\desafios\ANUNCIOS\ANUNCIOS" t="IncludeFlat">
       <e p="Anuncios.sln" t="IncludeFlat" />
       <e p="API" t="IncludeRecursive">
+        <e p=".gitignore" t="Include" />
         <e p="API.csproj" t="IncludeRecursive" />
         <e p="app.config" t="Include" />
         <e p="appsettings.Development.json" t="Include" />
